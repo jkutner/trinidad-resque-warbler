@@ -54,7 +54,7 @@ GEM
       thor (~> 0.14)
     jruby-openssl (0.7.4)
       bouncy-castle-java
-    jruby-rack (1.1.2)
+    jruby-rack (1.1.3)
     json (1.6.4-java)
     mail (2.3.0)
       i18n (>= 0.4.0)
@@ -119,10 +119,11 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    trinidad (1.2.3)
-      jruby-rack (>= 1.0.9)
+    trinidad (1.3.1)
+      jruby-rack (>= 1.1.2)
+      rack
       trinidad_jars (>= 1.0.1)
-    trinidad_jars (1.0.1)
+    trinidad_jars (1.0.2)
     trinidad_resque_extension (0.1.0)
       rake
       resque
@@ -145,6 +146,7 @@ DEPENDENCIES
   json
   rails (= 3.1.1)
   sass-rails (~> 3.1.4)
-  trinidad
-  trinidad_resque_extension
+  trinidad (= 1.3.1)
+  trinidad_jars (= 1.0.2)
+  trinidad_resque_extension (= 0.1.0)
   uglifier (>= 1.0.3)

@@ -32,5 +32,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 
-gem "trinidad"
-gem "trinidad_resque_extension"
+gem "trinidad", "1.3.1"
+gem "trinidad_jars", "1.0.2"
+gem "trinidad_resque_extension", "0.1.0"
