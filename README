@@ -117,3 +117,43 @@ Ultimately, the workers aren't started.
 
 The weirdest part, is that I can get it working by including Warbler in my project 
 (I found this out by accident).
+
+First, I add Warbler to the Gemfile:
+
+	gem "warbler"
+	
+Then I create a `lib/tasks/warbler.rake` file and put this in it:
+
+	require 'bundler'
+	Warbler::Task.new(:warble)
+	
+Now, when I start Trinidad the workers start up just fine!
+
+	$ trinidad
+	NOTE: Gem::GemPathSearcher#initialize is deprecated with no replacement. It will be removed on or after 2011-10-01.
+	Gem::GemPathSearcher#initialize called from /Users/jkutner/.rvm/gems/jruby-1.6.5/gems/trinidad_resque_extension-0.1.0/lib/trinidad_resque_extension.rb:51.
+	NOTE: Gem::GemPathSearcher#find is deprecated with no replacement. It will be removed on or after 2011-10-01.
+	Gem::GemPathSearcher#find called from /Users/jkutner/.rvm/gems/jruby-1.6.5/gems/trinidad_resque_extension-0.1.0/lib/trinidad_resque_extension.rb:51.
+	Jan 12, 2012 4:01:11 PM org.apache.coyote.AbstractProtocolHandler init
+	INFO: Initializing ProtocolHandler ["http-bio-3000"]
+	Jan 12, 2012 4:01:11 PM org.apache.catalina.core.StandardService startInternal
+	INFO: Starting service Tomcat
+	Jan 12, 2012 4:01:11 PM org.apache.catalina.core.StandardEngine startInternal
+	INFO: Starting Servlet Engine: Apache Tomcat/7.0.11
+	2012-01-12 16:01:11 INFO: No global web.xml found
+	2012-01-12 16:01:13 INFO: Info: received max runtimes = 5
+	2012-01-12 16:01:13 INFO: jruby 1.6.5 (ruby-1.8.7-p330) (2011-10-25 9dcd388) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_29) [darwin-x86_64-java]
+	2012-01-12 16:01:13 INFO: Info: using runtime pool timeout of 30 seconds
+	2012-01-12 16:01:13 INFO: Info: received min runtimes = 1
+	2012-01-12 16:01:13 INFO: Info: received max runtimes = 5
+	2012-01-12 16:01:30 INFO: Info: add application to the pool. size now = 1
+	Invalid log level , using default: INFO
+	2012-01-12 16:01:30 INFO: The start() method was called on component [Realm[Simple]] after start() had already been called. The second call will be ignored.
+	2012-01-12 16:01:30 INFO: No global web.xml found
+	2012-01-12 16:01:31 INFO: jruby 1.6.5 (ruby-1.8.7-p330) (2011-10-25 9dcd388) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_29) [darwin-x86_64-java]
+	:public is no longer used to avoid overloading Module#public, use :public_folder instead
+		from /Users/jkutner/.rvm/gems/jruby-1.6.5/gems/resque-1.19.0/lib/resque/server.rb:12:in `Server'
+	2012-01-12 16:01:33 INFO: Starting ProtocolHandler ["http-bio-3000"]
+	
+The best I can figure is that Warbler is loading something into the path that Rake
+uses when it starts up.  But I'm pretty clueless after that.
