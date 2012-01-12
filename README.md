@@ -1,6 +1,6 @@
 This project demonstrates a problem I'm having with the trinidad_resque_extension.
 
-== The Problem
+## The Problem
 
 Here's how i created this app:
 
@@ -113,7 +113,7 @@ resque:work task.  If I set RAKEOPT=--trace then i can get the full trace:
 
 Ultimately, the workers aren't started.  
 
-== Hack Time
+## Hack Time
 
 The weirdest part, is that I can get it working by including Warbler in my project 
 (I found this out by accident).
