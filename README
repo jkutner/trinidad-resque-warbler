@@ -118,6 +118,8 @@ Ultimately, the workers aren't started.
 The weirdest part, is that I can get it working by including Warbler in my project 
 (I found this out by accident).
 
+You can find these changes in the `warbler` branch of this repo.
+
 First, I add Warbler to the Gemfile:
 
 	gem "warbler"
