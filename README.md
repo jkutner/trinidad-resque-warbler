@@ -10,8 +10,8 @@ Here's how i created this app:
 	
 Add these to my Gemfile:
 	
-	gem "trinidad", "1.3.1"
-	gem "trinidad_jars", "1.0.2"
+	gem "trinidad", "1.2.3"
+	gem "trinidad_jars", "1.0.1"
 	gem "trinidad_resque_extension", "0.1.0"
 
 Back to the console:
