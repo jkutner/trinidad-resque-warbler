@@ -39,7 +39,7 @@ In a seperate console, start redis:
 	
 Back to the original console, start trinidad:
 
-	$ trindad
+	$ bundle exec trindad
 	NOTE: Gem::GemPathSearcher#initialize is deprecated with no replacement. It will be removed on or after 2011-10-01.
 	Gem::GemPathSearcher#initialize called from /Users/jkutner/.rvm/gems/jruby-1.6.5/gems/trinidad_resque_extension-0.1.0/lib/trinidad_resque_extension.rb:51.
 	NOTE: Gem::GemPathSearcher#find is deprecated with no replacement. It will be removed on or after 2011-10-01.
@@ -132,7 +132,7 @@ Then I create a `lib/tasks/warbler.rake` file and put this in it:
 	
 Now, when I start Trinidad the workers start up just fine!
 
-	$ trinidad
+	$ bundle exec trinidad
 	NOTE: Gem::GemPathSearcher#initialize is deprecated with no replacement. It will be removed on or after 2011-10-01.
 	Gem::GemPathSearcher#initialize called from /Users/jkutner/.rvm/gems/jruby-1.6.5/gems/trinidad_resque_extension-0.1.0/lib/trinidad_resque_extension.rb:51.
 	NOTE: Gem::GemPathSearcher#find is deprecated with no replacement. It will be removed on or after 2011-10-01.
